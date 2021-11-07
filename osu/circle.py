@@ -60,6 +60,14 @@ class Circle:
         if s >= 10 * (self.ar / self.base) and s <= 50 * (self.ar / self.base) and not s <= 0 and not self.clicked:
             p = int((((45 * (self.ar / self.base)) - abs((45 * (self.ar / self.base) - s))) * 2.2) / (self.ar / self.base)) #point calc equasion shit
             print(p)
+            part = 45/3
+            if s < part:
+                self.ph.okay()
+            elif s < part * 2 and s > part:
+                self.ph.good()
+            elif s > part * 2:
+                self.ph.perfect()
+                
             self.clicked = True
             self.done = True
         else:
